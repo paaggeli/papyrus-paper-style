@@ -1,0 +1,129 @@
+/* To create the rough edge at the top, I started with a pattern I made in ComfyUI, papyrus.jpg. 
+I opened this image in Photopea, cropped the bottom section to a height of 10px, and saved it as papyrus-top.png. 
+Then, using Photopea's Eraser Tool, I gently removed some color from the top of papyrus-top.png to create a rough edge effect. 
+Since papyrus.jpg is a repeating pattern, the bottom of papyrus-top.png will seamlessly blend with papyrus.jpg when used together in our HTML. 
+
+Similarly, for the left edge, I cropped the right section of papyrus.jpg to a width of 10px and removed color from the left side to create the rough edge effect.
+
+To create the right and bottom edges, I used a different approach. For the bottom edge, I created a new transparent image with the same width as papyrus.jpg and a height of 10px. 
+I filled in with the background color I plan to use for the div.papyrus-content element and then used the Eraser Tool to create rough edges.
+
+Similarly, for the right edge, I created a transparent image with the same height as papyrus.jpg and a width of 10px, filled in with the same background color, and used the Eraser Tool to create rough edges.
+*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Poppins", serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fbfbfb;
+}
+header {
+    color: #e5e5e5;
+    background-color: #221f1f;
+    text-align: center;
+}
+
+p {
+    padding: 8px;
+}
+
+a {
+    color: #fff;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    min-height: 100vh;
+    color: #e5e5e5;
+    background-color: #0e0e0e;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+}
+
+.papyrus-section {
+    padding: 50px;
+}
+.papyrus-container {
+    position: relative;
+}
+/* The backgound image is the one we created with ComfyUI */
+.papyrus-content {
+    position: relative;
+    color: #0e0e0e;
+    background-repeat: repeat;
+    background-color: #0e0e0e;
+    background-image: url('images/papyrus.jpg');
+    margin: 10px;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 70px;
+}
+.papyrus-content h1 {
+    font-family: "Caesar Dressing", system-ui;
+    text-align: center;
+    font-style: normal;
+    text-transform: uppercase;
+    line-height: normal;
+    margin-bottom: 16px;
+}
+/* Styles for the right papyrus element, which creates a rough right edge of the paper. */
+.right-papyrus {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 10px;
+    min-height: 100%;
+    z-index: 15;
+    background-repeat: repeat-y;
+    background-color: transparent;
+    background-image: url('images/papyrus-right.png');
+}
+/* Styles for the left papyrus element, which creates a rough left edge of the paper. */
+.left-papyrus {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    min-height: 100%;
+    z-index: 15;
+    background-repeat: repeat-y;
+    background-color: #0e0e0e;
+    background-image: url('images/papyrus-left.png');
+}
+/* Styles for the top papyrus element, which creates a rough top edge of the paper. */
+.top-papyrus{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    z-index: 10;
+    background-repeat: repeat-x;
+    background-color: #0e0e0e;
+    background-image: url('images/papyrus-top.png');
+}
+/* Styles for the bottom papyrus element, which creates a rough bottom edge of the paper. */
+.bottom-papyrus {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background-color: transparent;
+    z-index: 16;
+    background-repeat: repeat-x;
+    background-image: url('images/papyrus-bottom.png');
+}

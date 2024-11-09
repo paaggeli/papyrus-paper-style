@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ancient Paper - Papyrus Texture</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caesar+Dressing&family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="papyrus-style.css">
+</head>
+<body>
+    <header>
+        <h1>Ancient Paper Texture</h1>
+        <p>I created this Ancient Paper Texture using ComfyUI and followed this <a href="https://www.youtube.com/watch?v=QIvWdmqVx6E">YouTube tutorial</a> on how to create patterns and tiles.<br/>
+            I'm including the JSON file containing the ComfyUI workflow, so you can easily replicate similar results with your own projects.
+        </p>
+        <p>
+            I created this papyrus-style texture specifically for my upcoming project, <a href="https://tartarusinsight.com/">Tartarus Insight</a>, which I'm building in public.<br/>
+            If you're interested in following along with the process, feel free to <a href="https://x.com/PanosAngel1">check out!</a> 
+        </p>
+        <p><strong>Feel free to use this texture in your own projects as well!</strong></p>
+    </header>
+
+    <main>
+        <section class="papyrus-section">
+            <div class="papyrus-container">
+                <div class="top-papyrus"><!-- An empty div to create a rough top edge of the papyrus texture. --></div>
+                <div class="right-papyrus"><!-- An empty div to create a rough right edge of the papyrus texture. --></div>
+                <div class="papyrus-content">
+                    <h1>To create the rough edges</h1>
+                    <div>
+                        <p>To create the rough edge at the top, I started with a pattern I made in ComfyUI, papyrus.jpg. 
+                            I opened this image in Photopea, cropped the bottom section to a height of 10px, and saved it as papyrus-top.png. 
+                            Then, using Photopea's Eraser Tool, I gently removed some color from the top of papyrus-top.png to create a rough edge effect. 
+                            Since papyrus.jpg is a repeating pattern, the bottom of papyrus-top.png will seamlessly blend with papyrus.jpg when used together in our HTML. 
+                        </p>    
+                        <p>Similarly, for the left edge, I cropped the right section of papyrus.jpg to a width of 10px and removed color from the left side to create the rough edge effect.</p>
+                            
+                        <p>To create the right and bottom edges, I used a different approach. For the bottom edge, I created a new transparent image with the same width as papyrus.jpg and a height of 10px. 
+                            I filled in with the background color I plan to use for the div.papyrus-content element and then used the Eraser Tool to create rough edges.
+                        </p>
+                            
+                        <p>Similarly, for the right edge, I created a transparent image with the same height as papyrus.jpg and a width of 10px, filled in with the same background color, and used the Eraser Tool to create rough edges.</p>
+                    </div>
+                    
+                </div>
+                <div class="bottom-papyrus"><!-- An empty div to create a rough bottom edge of the papyrus texture. --></div>
+                <div class="left-papyrus"><!-- An empty div to create a rough left edge of the papyrus texture. --></div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 <a href="https://x.com/PanosAngel1">Panos</a> | Built with ❤️ </p>
+    </footer>
+</body>
+</html>
